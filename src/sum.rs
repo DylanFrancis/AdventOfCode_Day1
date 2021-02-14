@@ -30,11 +30,11 @@ fn sum(parts: u32, target: i32, arr_to_search: Vec<i32>) -> Option<Vec<i32>> {
         let cur = arr_to_search[0];
         let mut res = sum(parts - 1, target - cur, arr_to_search[1..].to_vec());
 
-        return if res.is_none() {
-            None
+        if res.is_none() {
+            return None
         } else {
             res.as_mut().unwrap().push(cur);
-            Some(res.unwrap())
+            return Some(res.unwrap())
         }
     }
     else {
