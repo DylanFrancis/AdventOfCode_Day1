@@ -1,8 +1,13 @@
 mod sum;
+mod passwords;
 
 use std::env;
 
 fn main() {
+    passwords::run();
+}
+
+fn sum() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {
